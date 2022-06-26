@@ -9,7 +9,8 @@ export const githubRepos = axios.create({
 })
 
 export const WeatherServiceLocation = axios.create({
-  baseURL: 'https://api.weather.com/v3/location/'
+  baseURL: 'https://api.weather.com/v3/location/',
+
 })
 
 export const WeatherServiceTemperature = axios.create({

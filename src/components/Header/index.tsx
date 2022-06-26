@@ -6,7 +6,7 @@ export function Header() {
 
   const { city, state, temperatureMax, temperatureMin } = useWeather()
 
-
+  const min = parseInt(String(temperatureMin))
   return (
     <>
       <header className='w-full max-w-5xl h-12 m-auto flex justify-center items-center gap-10'>
@@ -25,7 +25,7 @@ export function Header() {
             className="w-10 h-10 animate-spin-slow "
           />
 
-          <h2 className="text-xl font-semibold">MIN: {parseInt(String(temperatureMin))} Cº | Max: {parseInt(String(temperatureMax))} Cº </h2>
+          <h2 className="text-xl font-semibold">MIN: {min} Cº | Max: {parseInt(String(temperatureMax))} Cº </h2>
         </div>
       </header>
     </>

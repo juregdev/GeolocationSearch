@@ -24,9 +24,10 @@ export function WeaterContext({ children }: WeatherContextProps) {
   const { city, temperatureMax, temperatureMin, state } = dataApis
 
   async function test(data1: number, data2: number) {
-    const city = await WeatherServiceLocation.get(`point?geocode=${data1.toFixed(2)},${data2.toFixed(2)}&language=en-US&format=json&apiKey=${process.env.SECRET_KEY_API_WEATHER}`)
+    const secret = process.env.SECRET_KEY_API_WEATHER
+    const city = await WeatherServiceLocation.get(`point?geocode=${data1.toFixed(2)},${data2.toFixed(2)}&language=en-US&format=json&apiKey=$e0ae7246213842fcae72462138d2fcd6`)
 
-    const temperature = await WeatherServiceTemperature.get(`daily/5day?geocode=${data1.toFixed(2)},${data2.toFixed(2)}&format=json&units=e&language=pt-BR&apiKey=${process.env.SECRET_KEY_API_WEATHER}`)
+    const temperature = await WeatherServiceTemperature.get(`daily/5day?geocode=${data1.toFixed(2)},${data2.toFixed(2)}&format=json&units=e&language=pt-BR&apiKey=e0ae7246213842fcae72462138d2fcd6`)
 
     setDataApis({
       city: city.data.location.city,
