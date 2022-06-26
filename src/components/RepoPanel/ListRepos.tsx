@@ -32,7 +32,7 @@ function colorTech(data: string) {
 
 export function ListRepos({ name, url, description, tech, star }: ListReposProps) {
   return (
-    <div className="w-1/4  p-4 flex flex-col justify-between gap-2 h-full  rounded-md bg-gray-100 overflow-hidden shadow-md">
+    <div className="w-1/4  p-4 flex flex-col justify-between gap-2 h-full  rounded-md bg-gray-100 overflow-hidden shadow-md slide-in">
       <h1 className="text-xl font-semibold">{name.toUpperCase()}</h1>
       <p>{description}</p>
 

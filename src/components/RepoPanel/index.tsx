@@ -24,8 +24,19 @@ export function RepoPanel() {
       </div>
       <div className="w-full px-10 flex flex-wrap justify-center items-center gap-y-4 gap-4 h-[40vh]">
         {data.repos.map((repo: repos) => {
+          let i = 0
+
           return (
-            <ListRepos key={repo.id} name={repo.name} description={repo.description} tech={repo.language} star={repo.stargazers_count} url={repo.html_url} />
+            <ListRepos
+              key={repo.id}
+              name={repo.name}
+              description={repo.description}
+              tech={repo.language}
+              star={repo.stargazers_count}
+              url={repo.html_url}
+
+            />
+
           )
         })}
       </div>
