@@ -1,10 +1,10 @@
 import githubUsernameRegex from 'github-username-regex';
-import { FormEvent, InputHTMLAttributes, useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { FormEvent, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useGit } from '../../hooks/useGit';
 
 
-type TFieldValues = {
+type Inputs = {
   GitUser: string;
 }
 
@@ -16,11 +16,11 @@ export function Inputs() {
 
   const { handleSubmit, register } = useForm()
 
-  const Submit: SubmitHandler<TFieldValues> = async (data) => {
+  const Submit: SubmitHandler<Inputs> = async (data) => {
     const { GitUser } = data
-    setValidUser(githubUsernameRegex.test(GitUser))
+    setValidUser(githubUsernameRegex.test(GitUser.toLowerCase()))
 
-    if (githubUsernameRegex.test(GitUser) === true) {
+    if (githubUsernameRegex.test(GitUser.toLowerCase()) === true) {
       await setUser(GitUser)
       callGit(GitUser)
     } else { alert('User invalid') }
